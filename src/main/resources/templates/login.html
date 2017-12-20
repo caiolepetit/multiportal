@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>MultiPortal Desafio</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>	
+	<div class="container">
+		<form th:action="@{/login}" method="POST">
+			<h3>Seja bem-vindo</h3>
+			<br/>
+			 
+			<input type="text" id="email" name="email" placeholder="Insira seu e-mail"
+				class="form-control" /> <br/> 
+			<input type="password"  placeholder="Insira seu password"
+				id="password" name="password" class="form-control" /> <br /> 
+				
+			<div align="center" th:if="${param.error}">
+				<p style="font-size: 20; color: #FF1C19;">E-mail ou senha incorretos, por favor verifique.</p>
+			</div>
+			<button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit" th:text="Login"></button>
+		</form>
+	</div>
+</body>
+</html>
